@@ -27,7 +27,7 @@
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <!-- Custom SVG Logo -->
-                <svg viewBox="0 0 100 100" class="w-10 h-10 md:w-12 md:h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- <svg viewBox="0 0 100 100" class="w-10 h-10 md:w-12 md:h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="#ff1f40" />
@@ -37,7 +37,30 @@
                     <path d="M75 25C88 40 85 60 70 75C60 85 40 90 25 75C20 70 18 65 20 60" stroke="url(#logoGrad)" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M50 72C62.1503 72 72 62.1503 72 50C72 37.8497 62.1503 28 50 28C37.8497 28 28 37.8497 28 50C28 62.1503 37.8497 72 50 72ZM50 58C54.4183 58 58 54.4183 58 50C58 45.5817 54.4183 42 50 42C45.5817 42 42 45.5817 42 50C42 54.4183 45.5817 58 50 58Z" fill="url(#logoGrad)"/>
                     <path d="M25 75C12 60 15 40 30 25C40 15 60 10 75 25C80 30 82 35 80 40" stroke="url(#logoGrad)" stroke-width="8" stroke-linecap="round"/>
-                </svg>
+                </svg> -->
+              
+<svg viewBox="0 0 100 100" class="w-10 h-10 md:w-12 md:h-12" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <clipPath id="imageCircle">
+            <circle cx="50" cy="50" r="45" />
+        </clipPath>
+        
+        <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ff1f40" />
+            <stop offset="100%" stop-color="#a8001a" />
+        </linearGradient>
+    </defs>
+
+    <circle cx="50" cy="50" r="48" stroke="url(#borderGrad)" stroke-width="4" fill="none" opacity="0.8" />
+
+    <image 
+        href="https://lh3.googleusercontent.com/d/1qhUydMVa56RSu-SIP5uIuTpxZyFBjgZe" 
+        x="5" y="5" 
+        width="90" height="90" 
+        preserveAspectRatio="xMidYMid slice"
+        clip-path="url(#imageCircle)" 
+    />
+</svg>
                 <div class="flex flex-col">
                     <span class="text-xl md:text-2xl font-black tracking-tighter text-white uppercase">
                         OPTIMECH <span class="text-red-600">SOLUTION</span>
@@ -182,27 +205,41 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <div class="industry-card relative h-80 overflow-hidden rounded-2xl group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Automotive">
+                    <img src="https://lh3.googleusercontent.com/u/0/d/1Ai5_PHoEY1_vKHmorCFGS_UpGHBlATCw" 
+     class="absolute inset-0 w-full h-full object-cover opacity-50" 
+     alt="Automotive">
+                    <!-- <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Automotive"> -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3 class="absolute bottom-6 left-6 text-xl font-black group-hover:text-red-500 transition-colors">Automotive</h3>
                 </div>
                 <div class="industry-card relative h-80 overflow-hidden rounded-2xl group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Medical">
+                    <img src="https://lh3.googleusercontent.com/u/0/d/15avhk1HD2Fvovx6ecW-eGoFuL_Ip-uoH" 
+     class="absolute inset-0 w-full h-full object-cover opacity-50" 
+     alt="Medical">
+                    <!-- <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Medical"> -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3 class="absolute bottom-6 left-6 text-xl font-black group-hover:text-red-500 transition-colors">Medical Devices</h3>
                 </div>
                 <div class="industry-card relative h-80 overflow-hidden rounded-2xl group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1565043589221-1a6a319c64e6?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Industrial">
+                    <img src="https://lh3.googleusercontent.com/u/0/d/1V30iLAs4IeGAfIPrwI4KqgJPz_pMxsWw" 
+     class="absolute inset-0 w-full h-full object-cover opacity-50" 
+     alt="Industrial">
+                    <!-- <img src="https://images.unsplash.com/photo-1565043589221-1a6a319c64e6?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Industrial"> -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3 class="absolute bottom-6 left-6 text-xl font-black group-hover:text-red-500 transition-colors">Industrial Machinery</h3>
                 </div>
                 <div class="industry-card relative h-80 overflow-hidden rounded-2xl group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1626242342573-0625661b0fc2?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Packaging">
+                    <img src="https://lh3.googleusercontent.com/u/0/d/1GOe3eoR2qRQUbj4X8B9UTciU2aUXK5Au" 
+     class="absolute inset-0 w-full h-full object-cover opacity-50" 
+     alt="Packaging">
+                    <!-- <img src="https://drive.google.com/file/d/1GOe3eoR2qRQUbj4X8B9UTciU2aUXK5Au/view?usp=sharing" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Packaging"> -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3 class="absolute bottom-6 left-6 text-xl font-black group-hover:text-red-500 transition-colors">Packaging</h3>
                 </div>
                 <div class="industry-card relative h-80 overflow-hidden rounded-2xl group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1620619767323-b95a89183081?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Plastic">
+                     <img src="https://lh3.googleusercontent.com/u/0/d/1B-7NDRbqcgplfasC5bZ0JR0F96Yny7-g" 
+     class="absolute inset-0 w-full h-full object-cover opacity-50" 
+     alt="Plastic">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3 class="absolute bottom-6 left-6 text-xl font-black group-hover:text-red-500 transition-colors">Plastic Injection</h3>
                 </div>
@@ -301,11 +338,35 @@
             <div class="grid lg:grid-cols-4 gap-12 mb-16">
                 <div>
                     <div class="flex items-center space-x-3 mb-6">
-                        <svg viewBox="0 0 100 100" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- <svg viewBox="0 0 100 100" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M75 25C88 40 85 60 70 75C60 85 40 90 25 75C20 70 18 65 20 60" stroke="#ff1f40" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M50 72C62.1503 72 72 62.1503 72 50C72 37.8497 62.1503 28 50 28C37.8497 28 28 37.8497 28 50C28 62.1503 37.8497 72 50 72ZM50 58C54.4183 58 58 54.4183 58 50C58 45.5817 54.4183 42 50 42C45.5817 42 42 45.5817 42 50C42 54.4183 45.5817 58 50 58Z" fill="#ff1f40"/>
                             <path d="M25 75C12 60 15 40 30 25C40 15 60 10 75 25C80 30 82 35 80 40" stroke="#ff1f40" stroke-width="8" stroke-linecap="round"/>
-                        </svg>
+                        </svg> -->
+
+<svg viewBox="0 0 100 100" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <clipPath id="centerImageClip">
+            <circle cx="50" cy="50" r="22" />
+        </clipPath>
+    </defs>
+
+    <!-- <path d="M75 25C88 40 85 60 70 75C60 85 40 90 25 75C20 70 18 65 20 60" 
+          stroke="#ff1f40" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+
+    <path d="M25 75C12 60 15 40 30 25C40 15 60 10 75 25C80 30 82 35 80 40" 
+          stroke="#ff1f40" stroke-width="8" stroke-linecap="round"/> -->
+
+    <image 
+        href="https://lh3.googleusercontent.com/d/1qhUydMVa56RSu-SIP5uIuTpxZyFBjgZe" 
+        x="28" y="28" 
+        width="44" height="44" 
+        preserveAspectRatio="xMidYMid slice"
+        clip-path="url(#centerImageClip)" 
+    />
+    
+    <circle cx="50" cy="50" r="30" stroke="#ff1f40" stroke-width="2" />
+</svg>
                         <span class="text-xl font-black uppercase tracking-tighter">OPTIMECH <span class="text-red-600">SOLUTION</span></span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed">Leading engineering, manufacturing, and automation firm in Vapi, specialized in high-precision solutions since 1995.</p>
