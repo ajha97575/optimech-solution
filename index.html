@@ -19,53 +19,44 @@
         .glass-nav { backdrop-filter: blur(10px); background: rgba(10, 25, 47, 0.9); }
         .industry-card:hover img { transform: scale(1.1); transition: transform 0.7s ease; }
     </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Standard initialization
+            emailjs.init("AndGr6ybHtQBRBTts");
+        })();
+    </script>
 </head>
 <body class="bg-white text-slate-900 selection:bg-red-600 selection:text-white">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <!-- Custom SVG Logo -->
-                <!-- <svg viewBox="0 0 100 100" class="w-10 h-10 md:w-12 md:h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 glass-nav">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <svg viewBox="0 0 100 100" class="w-8 h-8 md:w-12 md:h-12" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <clipPath id="imageCircle">
+                            <circle cx="50" cy="50" r="45" />
+                        </clipPath>
+                        <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="#ff1f40" />
                             <stop offset="100%" stop-color="#a8001a" />
                         </linearGradient>
                     </defs>
-                    <path d="M75 25C88 40 85 60 70 75C60 85 40 90 25 75C20 70 18 65 20 60" stroke="url(#logoGrad)" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M50 72C62.1503 72 72 62.1503 72 50C72 37.8497 62.1503 28 50 28C37.8497 28 28 37.8497 28 50C28 62.1503 37.8497 72 50 72ZM50 58C54.4183 58 58 54.4183 58 50C58 45.5817 54.4183 42 50 42C45.5817 42 42 45.5817 42 50C42 54.4183 45.5817 58 50 58Z" fill="url(#logoGrad)"/>
-                    <path d="M25 75C12 60 15 40 30 25C40 15 60 10 75 25C80 30 82 35 80 40" stroke="url(#logoGrad)" stroke-width="8" stroke-linecap="round"/>
-                </svg> -->
-              
-<svg viewBox="0 0 100 100" class="w-10 h-10 md:w-12 md:h-12" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <clipPath id="imageCircle">
-            <circle cx="50" cy="50" r="45" />
-        </clipPath>
-        
-        <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ff1f40" />
-            <stop offset="100%" stop-color="#a8001a" />
-        </linearGradient>
-    </defs>
-
-    <circle cx="50" cy="50" r="48" stroke="url(#borderGrad)" stroke-width="4" fill="none" opacity="0.8" />
-
-    <image 
-        href="https://lh3.googleusercontent.com/d/1qhUydMVa56RSu-SIP5uIuTpxZyFBjgZe" 
-        x="5" y="5" 
-        width="90" height="90" 
-        preserveAspectRatio="xMidYMid slice"
-        clip-path="url(#imageCircle)" 
-    />
-</svg>
+                    <circle cx="50" cy="50" r="48" stroke="url(#borderGrad)" stroke-width="4" fill="none" opacity="0.8" />
+                    <image 
+                        href="https://lh3.googleusercontent.com/d/1qhUydMVa56RSu-SIP5uIuTpxZyFBjgZe" 
+                        x="5" y="5" 
+                        width="90" height="90" 
+                        preserveAspectRatio="xMidYMid slice"
+                        clip-path="url(#imageCircle)" 
+                    />
+                </svg>
                 <div class="flex flex-col">
-                    <span class="text-xl md:text-2xl font-black tracking-tighter text-white uppercase">
+                    <span class="text-xs sm:text-xl md:text-2xl font-black tracking-tighter text-white uppercase leading-none">
                         OPTIMECH <span class="text-red-600">SOLUTION</span>
                     </span>
-                    <span class="text-[9px] md:text-[10px] text-slate-400 tracking-[0.2em] font-bold uppercase -mt-1">Engineering | Manufacturing | Automation</span>
+                    <span class="text-[7px] md:text-[10px] text-slate-400 tracking-[0.1em] md:tracking-[0.2em] font-bold uppercase mt-0.5 hidden sm:block">Engineering | Manufacturing | Automation</span>
                 </div>
             </div>
             
@@ -77,44 +68,63 @@
                 <a href="#quote" class="bg-red-600 text-white px-6 py-2 rounded font-bold text-sm hover:bg-red-700 transition-all">GET A QUOTE</a>
             </div>
 
-            <button id="menuBtn" class="lg:hidden text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <button id="menu-toggle" class="lg:hidden text-white p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-950 z-[60] flex-col items-center justify-center space-y-8 text-center hidden lg:hidden">
+        <button id="menu-close" class="absolute top-8 right-8 text-white">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="#services" class="text-xl font-black text-white hover:text-red-600 uppercase tracking-widest mobile-link">Services</a>
+        <a href="#about" class="text-xl font-black text-white hover:text-red-600 uppercase tracking-widest mobile-link">About</a>
+        <a href="#industries" class="text-xl font-black text-white hover:text-red-600 uppercase tracking-widest mobile-link">Industries</a>
+        <a href="#capabilities" class="text-xl font-black text-white hover:text-red-600 uppercase tracking-widest mobile-link">Capabilities</a>
+        <a href="#quote" class="bg-red-600 text-white px-10 py-4 rounded font-black text-lg hover:bg-red-700 inline-block mobile-link">Get a Quote</a>
+    </div>
+
     <!-- Hero Section -->
-    <header class="relative h-screen flex items-center bg-slate-950 overflow-hidden">
+    <header class="relative min-h-screen flex flex-col justify-center pt-28 md:pt-32 pb-24 lg:pb-32 bg-slate-950 overflow-hidden">
         <div class="absolute inset-0 opacity-40">
             <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/40 to-transparent z-10"></div>
             <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Hero">
         </div>
         
-        <div class="container mx-auto px-6 relative z-20">
-            <div class="max-w-3xl">
-                <h4 class="text-red-600 font-black tracking-[0.3em] uppercase mb-4 opacity-0 transition-all duration-1000 translate-y-10" id="heroTag">Precision Excellence Since 1995</h4>
-                <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
-                    Precision Engineering & <br />
-                    <span class="text-red-600">Manufacturing Solutions</span>
-                </h1>
-                <p class="text-xl text-slate-300 mb-10 max-w-xl leading-relaxed">
-                    Delivering high-quality CNC machining, die & mould manufacturing, and automation solutions for modern industries worldwide.
-                </p>
-                <div class="flex flex-col sm:row space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#quote" class="bg-red-600 text-white px-10 py-5 rounded font-black text-lg hover:bg-red-700 transition-all text-center flex items-center justify-center">
-                        GET AN INSTANT QUOTE
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
+        <div class="container mx-auto px-4 md:px-6 relative z-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <!-- Left: Heading -->
+                <div class="max-w-4xl">
+                    <h4 class="text-red-600 font-black tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm uppercase mb-4 opacity-0 transition-all duration-1000 translate-y-10" id="heroTag">Precision Excellence Since 1995</h4>
+                    <h1 class="text-3xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+                        Precision Engineering & <br />
+                        <span class="text-red-600">Manufacturing Solutions</span>
+                    </h1>
+                </div>
+
+                <!-- Right: Description & Button -->
+                <div class="space-y-8 lg:pt-12">
+                    <p class="text-base md:text-xl text-slate-300 leading-relaxed max-w-xl">
+                        Delivering high-quality CNC machining, die & mould manufacturing, and automation solutions for modern industries worldwide.
+                    </p>
+                    <div>
+                        <a href="#quote" class="inline-flex bg-red-600 text-white px-8 md:px-12 py-5 md:py-6 rounded font-black text-sm md:text-lg hover:bg-red-700 transition-all text-center items-center justify-center shadow-2xl shadow-red-600/40">
+                            GET AN INSTANT QUOTE
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Stats Bar -->
-        <div class="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md py-8 border-t border-white/10 hidden md:block">
+        <div class="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md py-6 md:py-8 border-t border-white/10 hidden md:block">
             <div class="container mx-auto px-6 grid grid-cols-4 gap-8 text-white">
                 <div class="flex items-center space-x-4">
                     <span class="text-4xl font-black text-red-600">28+</span>
@@ -270,18 +280,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="lg:w-1/2 grid grid-cols-2 gap-6 relative z-10">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                        <span class="text-4xl font-black text-slate-100 block mb-4">01</span>
-                        <h4 class="font-black text-lg mb-2">Prototype</h4>
-                        <p class="text-xs text-slate-500">Quick turnaround for single-unit custom designs.</p>
+                    <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+                        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between h-full">
+                            <div>
+                                <span class="text-4xl font-black text-slate-100 block mb-4">01</span>
+                                <h4 class="font-black text-lg mb-2">Prototype</h4>
+                                <p class="text-xs text-slate-500">Quick turnaround for single-unit custom designs.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between h-full">
+                            <div>
+                                <span class="text-4xl font-black text-slate-100 block mb-4">02</span>
+                                <h4 class="font-black text-lg mb-2">Production</h4>
+                                <p class="text-xs text-slate-500">Optimized for consistent high-volume parts.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mt-8">
-                        <span class="text-4xl font-black text-slate-100 block mb-4">02</span>
-                        <h4 class="font-black text-lg mb-2">Production</h4>
-                        <p class="text-xs text-slate-500">Optimized for consistent high-volume parts.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -309,22 +323,22 @@
                 </div>
                 
                 <div class="lg:w-3/5 p-12 lg:p-16 bg-white">
-                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Request sent successfully! Our team will contact you shortly.');">
+                    <form id="contact-form" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Full Name" required class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
-                            <input type="email" placeholder="Company Email" required class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
+                            <input type="text" name="name" placeholder="Full Name" required class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
+                            <input type="email" name="email" placeholder="Company Email" required class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
                         </div>
-                        <textarea rows="4" placeholder="Briefly describe your requirements..." class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                        <textarea name="message" rows="4" placeholder="Briefly describe your requirements..." class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600"></textarea>
                         
-                        <div class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-red-600 transition-colors group cursor-pointer relative">
-                            <input type="file" id="file" class="absolute inset-0 opacity-0 cursor-pointer">
-                            <svg class="mx-auto mb-4 text-slate-300 group-hover:text-red-600 transition-colors w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                            <p class="font-black text-lg uppercase tracking-tight">Click to upload CAD files</p>
-                            <p class="text-slate-400 text-sm">STEP, IGS, PDF (Max 25MB)</p>
+                        <div class="space-y-2">
+                             <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Project Files</label>
+                             <input type="text" name="file_link" placeholder="Paste Google Drive link (optional)" class="w-full bg-slate-50 border border-slate-100 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
+                             <p class="text-[10px] text-slate-400 italic">Please share the link with "Anyone with the link can view" access.</p>
                         </div>
 
-                        <button type="submit" class="w-full bg-red-600 text-white font-black py-5 rounded-xl hover:bg-red-700 transition-all shadow-lg shadow-red-600/20 uppercase tracking-widest">
-                            SUBMIT QUOTE REQUEST
+                        <button type="submit" id="submit-btn" class="w-full bg-red-600 text-white font-black py-5 rounded-xl hover:bg-red-700 transition-all shadow-lg shadow-red-600/20 uppercase tracking-widest flex items-center justify-center">
+                            <span id="btn-text">SUBMIT QUOTE REQUEST</span>
+                            <div id="loader" class="hidden animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent ml-3"></div>
                         </button>
                     </form>
                 </div>
@@ -335,7 +349,7 @@
     <!-- Footer -->
     <footer id="contact" class="bg-slate-950 text-white pt-24 pb-12">
         <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start">
                 <div>
                     <div class="flex items-center space-x-3 mb-6">
                         <!-- <svg viewBox="0 0 100 100" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -382,7 +396,7 @@
                 </div>
                 <div class="lg:col-span-2">
                     <h4 class="font-black uppercase tracking-widest mb-8 text-red-600 text-sm">Contact Info</h4>
-                    <div class="grid md:grid-cols-2 gap-8 text-slate-400 text-sm">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-slate-400 text-sm">
                         <div class="flex items-start space-x-3">
                             <svg class="w-6 h-6 text-red-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             <span>Plot No. 1118/1119, BLD-A-205, Shivam Co. Op. Housing Soc. Ltd., Chanod, GIDC, Vapi, Gujarat 396195</span>
@@ -414,16 +428,35 @@
     </a>
 
     <script>
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuToggle.onclick = () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        };
+
+        menuClose.onclick = closeMenu;
+        mobileLinks.forEach(link => link.onclick = closeMenu);
+
         // Navbar effect on scroll
         const nav = document.getElementById('navbar');
         window.onscroll = () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('glass-nav', 'shadow-lg');
+            if (window.scrollY > 10) {
+                nav.classList.add('bg-slate-950/95', 'shadow-xl', 'py-4');
                 nav.classList.remove('py-6');
-                nav.classList.add('py-3');
             } else {
-                nav.classList.remove('glass-nav', 'shadow-lg');
-                nav.classList.remove('py-3');
+                nav.classList.remove('bg-slate-950/95', 'shadow-xl', 'py-4');
                 nav.classList.add('py-6');
             }
         };
@@ -456,8 +489,64 @@
         // Hero Reveal
         window.onload = () => {
             const heroTag = document.getElementById('heroTag');
-            heroTag.classList.remove('opacity-0', 'translate-y-10');
+            if (heroTag) heroTag.classList.remove('opacity-0', 'translate-y-10');
         };
+
+        // EmailJS Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const loader = document.getElementById('loader');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                btnText.textContent = 'SENDING...';
+                loader.classList.remove('hidden');
+
+                const publicKey = 'AndGr6ybHtQBRBTts';
+                const serviceID = 'service_d79odz9';
+                const adminTemplate = 'template_u18u0k2';
+                const userTemplate = 'template_ri6mp0e';
+
+                // Send with explicit Public Key in each call for maximum reliability
+                emailjs.sendForm(serviceID, adminTemplate, this, publicKey)
+                    .then(function() {
+                        console.log('Admin email sent successfully');
+                        
+                        const templateParams = {
+                            name: contactForm.name.value,
+                            email: contactForm.email.value,
+                            message: contactForm.message.value,
+                            file_link: contactForm.file_link.value || 'Not provided'
+                        };
+                        
+                        return emailjs.send(serviceID, userTemplate, templateParams, publicKey);
+                    })
+                    .then(function() {
+                        alert('SUCCESS! Your request has been sent. Check your email for confirmation.');
+                        contactForm.reset();
+                    })
+                    .catch(function(error) {
+                        console.error('EmailJS Error Detail:', error);
+                        const errorMsg = error.text || error.message || 'Check connection';
+                        
+                        if (errorMsg.includes('Account not found')) {
+                            alert('ERROR: Account not found.\n\nYour Public Key (5DEpW2Ly6Iy_njGxj) seems incorrect. Please go to EmailJS -> Account -> API Keys and verify it.');
+                        } else {
+                            alert('FAILED to send message. Error: ' + errorMsg);
+                        }
+                    })
+                    .finally(function() {
+                        submitBtn.disabled = false;
+                        btnText.textContent = 'SUBMIT QUOTE REQUEST';
+                        loader.classList.add('hidden');
+                    });
+            });
+        }
     </script>
 </body>
 </html>
