@@ -59,21 +59,8 @@
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 glass-nav">
         <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
             <div class="flex items-center space-x-2 sm:space-x-3">
-                <svg viewBox="0 0 100 100" class="w-8 h-8 md:w-12 md:h-12" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <clipPath id="imageCircle">
-                            <circle cx="50" cy="50" r="45" />
-                        </clipPath>
-                        <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#ff1f40" />
-                            <stop offset="100%" stop-color="#a8001a" />
-                        </linearGradient>
-                    </defs>
-                    <circle cx="50" cy="50" r="48" stroke="url(#borderGrad)" stroke-width="4" fill="none"
-                        opacity="0.8" />
-                    <image href="https://lh3.googleusercontent.com/d/1qhUydMVa56RSu-SIP5uIuTpxZyFBjgZe" x="5" y="5"
-                        width="90" height="90" preserveAspectRatio="xMidYMid slice" clip-path="url(#imageCircle)" />
-                </svg>
+                <!-- Logo: increased size to match text height -->
+                <img src="image/logo.png" alt="OPTIMECH SOLUTION Logo" class="w-10 h-10 md:w-14 md:h-14 object-contain rounded-full">
                 <div class="flex flex-col">
                     <span
                         class="text-xs sm:text-xl md:text-2xl font-black tracking-tighter text-white uppercase leading-none">
@@ -308,7 +295,6 @@
                     class="industry-card relative h-64 sm:h-72 lg:h-80 overflow-hidden rounded-2xl group cursor-pointer">
                     <img src="https://lh3.googleusercontent.com/u/0/d/1Ai5_PHoEY1_vKHmorCFGS_UpGHBlATCw"
                         class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Automotive">
-                    <!-- <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Automotive"> -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3
                         class="absolute bottom-6 left-6 text-lg md:text-xl font-black group-hover:text-red-500 transition-colors">
@@ -318,7 +304,6 @@
                     class="industry-card relative h-64 sm:h-72 lg:h-80 overflow-hidden rounded-2xl group cursor-pointer">
                     <img src="https://lh3.googleusercontent.com/u/0/d/15avhk1HD2Fvovx6ecW-eGoFuL_Ip-uoH"
                         class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Medical">
-                    <!-- <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Medical"> -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3
                         class="absolute bottom-6 left-6 text-lg md:text-xl font-black group-hover:text-red-500 transition-colors">
@@ -328,7 +313,6 @@
                     class="industry-card relative h-64 sm:h-72 lg:h-80 overflow-hidden rounded-2xl group cursor-pointer">
                     <img src="https://lh3.googleusercontent.com/u/0/d/1V30iLAs4IeGAfIPrwI4KqgJPz_pMxsWw"
                         class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Industrial">
-                    <!-- <img src="https://images.unsplash.com/photo-1565043589221-1a6a319c64e6?q=80&w=400&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Industrial"> -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3
                         class="absolute bottom-6 left-6 text-lg md:text-xl font-black group-hover:text-red-500 transition-colors">
@@ -338,7 +322,6 @@
                     class="industry-card relative h-64 sm:h-72 lg:h-80 overflow-hidden rounded-2xl group cursor-pointer">
                     <img src="https://lh3.googleusercontent.com/u/0/d/1GOe3eoR2qRQUbj4X8B9UTciU2aUXK5Au"
                         class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Packaging">
-                    <!-- <img src="https://drive.google.com/file/d/1GOe3eoR2qRQUbj4X8B9UTciU2aUXK5Au/view?usp=sharing" class="absolute inset-0 w-full h-full object-cover opacity-50" alt="Packaging"> -->
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <h3
                         class="absolute bottom-6 left-6 text-lg md:text-xl font-black group-hover:text-red-500 transition-colors">
@@ -467,18 +450,21 @@
                 <div class="lg:w-3/5 p-8 md:p-12 lg:p-16 bg-white">
                     <form id="contact-form" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" name="name" placeholder="Full Name" required
+                            <input type="text" name="name" id="name" placeholder="Full Name *" required
                                 class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
-                            <input type="email" name="email" placeholder="Company Email" required
+                            <input type="email" name="email" id="email" placeholder="Company Email *" required
                                 class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
                         </div>
-                        <textarea name="message" rows="4" placeholder="Briefly describe your requirements..."
-                            class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                        <!-- Phone Number Field Added -->
+                        <input type="tel" name="phone" id="phone" placeholder="Phone Number *" required
+                            class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
+                        <textarea name="message" id="message" rows="4" placeholder="Briefly describe your requirements... *"
+                            required class="w-full bg-slate-50 border-0 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600"></textarea>
 
                         <div class="space-y-2">
                             <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Project
                                 Files</label>
-                            <input type="text" name="file_link" placeholder="Paste Google Drive link (optional)"
+                            <input type="text" name="file_link" id="file_link" placeholder="Paste Google Drive link (optional)"
                                 class="w-full bg-slate-50 border border-slate-100 rounded-lg p-4 outline-none focus:ring-2 focus:ring-red-600">
                             <p class="text-[10px] text-slate-400 italic">Please share the link with "Anyone with the
                                 link can view" access.</p>
@@ -504,16 +490,8 @@
                 <!-- Company Info -->
                 <div>
                     <div class="flex items-center space-x-3 mb-8">
-                        <svg viewBox="0 0 100 100" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <clipPath id="footerLogoClip">
-                                    <circle cx="50" cy="50" r="22" />
-                                </clipPath>
-                            </defs>
-                            <image href="https://lh3.googleusercontent.com/d/1qhUydMVa56RSu-SIP5uIuTpxZyFBjgZe" x="28"
-                                y="28" width="44" height="44" clip-path="url(#footerLogoClip)" />
-                            <circle cx="50" cy="50" r="30" stroke="#ff1f40" stroke-width="2" />
-                        </svg>
+                        <!-- Footer logo: increased size to match text height -->
+                        <img src="image/logo.png" alt="OPTIMECH SOLUTION Logo" class="w-12 h-12 md:w-14 md:h-14 object-contain rounded-full">
                         <span class="text-xl font-black uppercase tracking-tighter">OPTIMECH <span
                                 class="text-red-600">SOLUTION</span></span>
                     </div>
@@ -711,15 +689,61 @@
             if (heroTag) heroTag.classList.remove('opacity-0', 'translate-y-10');
         };
 
-        // EmailJS Form Submission
+        // EmailJS Form Submission with Validation and Phone Number included in email
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
         const btnText = document.getElementById('btn-text');
         const loader = document.getElementById('loader');
 
+        // Validation function to check all required fields except file_link
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name) {
+                alert('Please enter your full name.');
+                return false;
+            }
+            if (!email) {
+                alert('Please enter your company email.');
+                return false;
+            }
+            if (!phone) {
+                alert('Please enter your phone number.');
+                return false;
+            }
+            if (!message) {
+                alert('Please describe your requirements.');
+                return false;
+            }
+            
+            // Basic email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            // Basic phone validation (minimum 10 digits)
+            const phonePattern = /^[\d\s+\-()]{10,}$/;
+            if (!phonePattern.test(phone)) {
+                alert('Please enter a valid phone number (minimum 10 digits).');
+                return false;
+            }
+            
+            return true;
+        }
+
         if (contactForm) {
             contactForm.addEventListener('submit', function (event) {
                 event.preventDefault();
+
+                // Validate all required fields
+                if (!validateForm()) {
+                    return;
+                }
 
                 // Show loading state
                 submitBtn.disabled = true;
@@ -732,13 +756,16 @@
                 const userTemplate = 'template_ri6mp0e';
 
                 // Send with explicit Public Key in each call for maximum reliability
+                // Note: Make sure your EmailJS admin template (template_u18u0k2) includes the {{phone}} variable
+                // The template should have: Name: {{name}}, Email: {{email}}, Phone: {{phone}}, Message: {{message}}, File Link: {{file_link}}
                 emailjs.sendForm(serviceID, adminTemplate, this, publicKey)
                     .then(function () {
-                        console.log('Admin email sent successfully');
+                        console.log('Admin email sent successfully with phone number included');
 
                         const templateParams = {
                             name: contactForm.name.value,
                             email: contactForm.email.value,
+                            phone: contactForm.phone.value,
                             message: contactForm.message.value,
                             file_link: contactForm.file_link.value || 'Not provided'
                         };
@@ -754,7 +781,9 @@
                         const errorMsg = error.text || error.message || 'Check connection';
 
                         if (errorMsg.includes('Account not found')) {
-                            alert('ERROR: Account not found.\n\nYour Public Key (5DEpW2Ly6Iy_njGxj) seems incorrect. Please go to EmailJS -> Account -> API Keys and verify it.');
+                            alert('ERROR: Account not found.\n\nPlease verify your EmailJS Public Key.');
+                        } else if (errorMsg.includes('template') || errorMsg.includes('missing')) {
+                            alert('IMPORTANT: Please update your EmailJS template (template_u18u0k2) to include the phone field.\n\nYour email template should have:\n\nName: {{name}}\nEmail: {{email}}\nPhone: {{phone}}\nMessage: {{message}}\nFile Link: {{file_link}}\n\nError: ' + errorMsg);
                         } else {
                             alert('FAILED to send message. Error: ' + errorMsg);
                         }
